@@ -2,5 +2,7 @@
 
 <h2>Books</h2>
 <div *ngFor="let book of books">
+  <a [title]="'ISBN: '+book.ISBN">
   <h3>{{book.title}}</h3>
+  </a>
 </div>
