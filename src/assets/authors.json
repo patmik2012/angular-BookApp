@@ -1,0 +1,12 @@
+[
+    {
+      "authorId": 1,
+      "name": "Első szerző",
+      "birth": 1984
+    },
+    {
+      "authorId": 2,
+      "name": "Második szerző",
+      "birth": 1989
+    }
+  ]
