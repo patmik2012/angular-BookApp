@@ -14,7 +14,7 @@ books=
       "id": 1,
       "title": "Első könyv",
       "authorId": 1,
-      "pubished": 2011,
+      "published": 2011,
       "pages": 345,
       "ISBN": "2352145234"
     },
