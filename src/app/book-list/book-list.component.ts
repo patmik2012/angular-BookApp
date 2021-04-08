@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { inputNames } from '@angular/cdk/schematics';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-book-list',
