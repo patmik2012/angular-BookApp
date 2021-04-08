@@ -37,4 +37,8 @@ books=
   ]
 
   name = 'Angular';
+
+  like(){
+    console.log('Liked!');
+  }
 }
