@@ -1,3 +1,17 @@
-<p>
-book-list works!
-</p>
+<h2>Books</h2>
+<div *ngFor="let book of books">
+  <a [title]="'ISBN: '+book.ISBN">
+    <h3>{{book.title}}</h3>
+  </a>
+
+  <p *ngIf="book.pages">
+    {{book.pages+' pages'}}
+  </p>
+
+  <p *ngIf="book.likes">
+    {{book.likes+' likes'}}
+  </p>
+
+  <app-book-social [bk]=book (onlike)="liked($event)"></app-book-social>
+
+</div>
