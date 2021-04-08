@@ -10,6 +10,10 @@
     {{book.pages+' pages'}}
   </p>
 
-  <app-book-social [bk]=book ></app-book-social>
+  <p *ngIf="book.likes">
+    {{book.likes+' likes'}}
+  </p>
+
+  <app-book-social [bk]=book (onlike)="liked($event)"></app-book-social>
 
 </div>

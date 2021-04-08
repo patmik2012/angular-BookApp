@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-book-social',
@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class BookSocialComponent implements OnInit {
 
   @Input('bk') book;
+  @Output() onlike = new EventEmitter<number>();
 
   constructor() { }
 
@@ -16,6 +17,7 @@ export class BookSocialComponent implements OnInit {
 
   like(){
     console.log('Like: '+ this.book.likes);
+    this.onlike.emit(this.book.likes+1);
   }
 
 }

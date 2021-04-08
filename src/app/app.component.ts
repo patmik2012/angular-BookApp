@@ -39,7 +39,11 @@ books=
     }
   ]
 
-  name = 'Angular';
+  name = 'BookApp';
+
+  liked($event){
+    alert($event);
+  }
 
 
 }
