@@ -16,7 +16,8 @@ books=
       "authorId": 1,
       "published": 2011,
       "pages": 345,
-      "ISBN": "2352145234"
+      "ISBN": "2352145234",
+      "likes":32
     },
     {
       "id": 2,
@@ -24,7 +25,8 @@ books=
       "authorId": 1,
       "published": 2010,
       "pages": 532,
-      "ISBN": "12355326312"
+      "ISBN": "12355326312",
+      "likes":23
     },
     {
       "id": 3,
@@ -32,13 +34,12 @@ books=
       "authorId": 2,
       "published": 2003, 
       "pages": 147,
-      "ISBN": "635234265623"
+      "ISBN": "635234265623",
+      "likes":12
     }
   ]
 
   name = 'Angular';
 
-  like(){
-    console.log('Liked!');
-  }
+
 }

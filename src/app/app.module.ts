@@ -14,6 +14,7 @@ import { HelloComponent } from './hello.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { environment } from '../environments/environment';
 import { BookListComponent } from './book-list/book-list.component';
+import { BookSocialComponent } from './book-social/book-social.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, HttpClientModule,
@@ -44,7 +45,7 @@ import { BookListComponent } from './book-list/book-list.component';
 		MatTooltipModule,
 		MatDialogModule,
     MatDividerModule*/ ],
-  declarations: [ AppComponent, HelloComponent, BookListComponent, ],
+  declarations: [ AppComponent, HelloComponent, BookListComponent, BookSocialComponent, ],
   bootstrap:    [ AppComponent ],
   providers: []
 })
