@@ -1,0 +1,22 @@
+<mat-card *ngIf="book">
+  <mat-card-header>
+    <div mat-card-avatar>
+      <i class="material-icons">menu_book</i>
+    </div>
+    <mat-card-title>
+        <b>{{book.title}}</b>
+    </mat-card-title>
+    <mat-card-subtitle>{{book.pages}} pages</mat-card-subtitle>
+    <mat-card-subtitle>Published in {{book.published}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{book.likes}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-button [routerLink]="['']">
+        <b>Go back</b>
+      </a>
+  </mat-card-actions>
+</mat-card>

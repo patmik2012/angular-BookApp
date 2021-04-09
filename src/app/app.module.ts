@@ -15,12 +15,14 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { environment } from '../environments/environment';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookSocialComponent } from './book-social/book-social.component';
+import { BookDetailsComponent } from './book-details/book-details.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, HttpClientModule,
   RouterModule.forRoot([
       { path: '', component: BookListComponent },
       { path: 'books', component: BookListComponent },
+      { path: 'books/:bookId', component:BookDetailsComponent },
     ]),
     MatButtonModule,
     MatCardModule,
@@ -45,7 +47,7 @@ import { BookSocialComponent } from './book-social/book-social.component';
 		MatTooltipModule,
 		MatDialogModule,
     MatDividerModule*/ ],
-  declarations: [ AppComponent, HelloComponent, BookListComponent, BookSocialComponent, ],
+  declarations: [ AppComponent, HelloComponent, BookListComponent, BookSocialComponent, BookDetailsComponent, ],
   bootstrap:    [ AppComponent ],
   providers: []
 })

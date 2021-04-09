@@ -1,17 +1,40 @@
 <h2>Books</h2>
-<div *ngFor="let book of books">
-  <a [title]="'ISBN: '+book.ISBN">
-    <h3>{{book.title}}</h3>
+
+<div style="margin-bottom: 10px">
+  <a mat-mini-fab routerLink="/create" color="primary">
+    <mat-icon>add</mat-icon>
   </a>
+</div>
 
-  <p *ngIf="book.pages">
-    {{book.pages+' pages'}}
-  </p>
+<div style="margin-bottom: 10px" *ngFor="let book of books">
+  <mat-card>
+    
+    <mat-card-header>
+      <div mat-card-avatar>
+        <i class="material-icons">menu_book</i>
+      </div>
 
-  <p *ngIf="book.likes">
-    {{book.likes+' likes'}}
-  </p>
+      <mat-card-title>
+        <a mat-button [title]="'ISBN: '+book.ISBN" [routerLink]="['/books', book.id]">
+          <h3>{{book.title}}</h3>
+        </a>
+        <mat-card-subtitle>{{book.pages+' pages'}}</mat-card-subtitle>
+        <mat-card-subtitle>{{'Published in '+book.published}}</mat-card-subtitle>
+      </mat-card-title>
+    </mat-card-header>
 
-  <app-book-social [bk]=book (onlike)="liked($event)"></app-book-social>
+      <mat-card-content>
+
+        <p *ngIf="book.likes">
+        {{book.likes+' likes'}}
+      </p>
+
+      </mat-card-content>
+    
+    <mat-card-actions>
+      <app-book-social [bk]=book (onlike)="liked($event)"></app-book-social>
+    </mat-card-actions>
+
+  </mat-card >
 
 </div>
