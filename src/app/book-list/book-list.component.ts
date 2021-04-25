@@ -1,13 +1,29 @@
 import { inputNames } from '@angular/cdk/schematics';
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
 import { BookService } from '../book.service';
+import { BookTable } from './books';
 
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.css']
 })
+
+
+export class BookListComponent implements AfterViewInit {
+  displayedColumns: string[] = ['title', 'authorId', 'published'];
+  dataSource = new MatTableDataSource();
+
+  @ViewChild(MatSort) sort: MatSort;
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+  }
+
+/*
 export class BookListComponent implements OnInit {
   /*
 books=
@@ -41,6 +57,8 @@ books=
     }
   ]
   */
+  
+
   
   constructor(private bookService: BookService) { }
 
