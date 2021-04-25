@@ -20,7 +20,7 @@ import { InMemoryBookService } from './in-memory-book.service';
 import { BookService } from './book.service';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, HttpClientModule,
+  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, HttpClientModule,environment.isMockEnabled ? HttpClientInMemoryWebApiModule.forRoot(InMemoryBookService) : [],
   RouterModule.forRoot([
       { path: '', component: BookListComponent },
       { path: 'books', component: BookListComponent },
