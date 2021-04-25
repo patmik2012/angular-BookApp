@@ -1,0 +1,51 @@
+<h3>Create new book</h3>
+<p>
+  <a mat-button routerLink="/books">
+    <b>Back to books</b>
+  </a>
+</p>
+
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit(bookForm.value)">
+   
+   <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Book's title</mat-label>
+        <input matInput placeholder="Title" formControlName="title">
+        <mat-hint>Give the title of the book</mat-hint>
+      </mat-form-field>
+   </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Author ID</mat-label>
+      <input matInput placeholder="AuthorID" formControlName="AuthorID">
+      <mat-hint>Give the author ID</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Published</mat-label>
+      <input matInput placeholder="Published" formControlName="Published">
+      <mat-hint>Give the year of publication</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Pages</mat-label>
+      <input matInput placeholder="Pages" formControlName="Pages">
+      <mat-hint>Give the number of pages</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>ISBN</mat-label>
+      <input matInput placeholder="ISBN" formControlName="ISBN">
+      <mat-hint>Give the ISBN nr</mat-hint>
+    </mat-form-field>
+  </div>
+
+   <button mat-raised-button color="primary" type>Create</button>
+</form>

@@ -15,9 +15,10 @@
       </div>
 
       <mat-card-title>
-        <a mat-button [title]="'ISBN: '+book.ISBN" [routerLink]="['/books', book.id]">
+        <a mat-button [title]="book.title" [routerLink]="['/books', book.id]">
           <h3>{{book.title}}</h3>
         </a>
+        <mat-card-subtitle>{{'ISBN: '+book.ISBN}}</mat-card-subtitle>
         <mat-card-subtitle>{{book.pages+' pages'}}</mat-card-subtitle>
         <mat-card-subtitle>{{'Published in '+book.published}}</mat-card-subtitle>
       </mat-card-title>
