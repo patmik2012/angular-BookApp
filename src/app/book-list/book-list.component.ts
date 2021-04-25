@@ -1,5 +1,7 @@
 import { inputNames } from '@angular/cdk/schematics';
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { BookService } from '../book.service';
 
 @Component({
   selector: 'app-book-list',
@@ -7,6 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
+  /*
 books=
 [
     {
@@ -37,10 +40,19 @@ books=
       "likes":12
     }
   ]
+  */
   
-  constructor() { }
+  constructor(private bookService: BookService) { }
+
+  books$: Observable<any>;
+  books;
 
   ngOnInit() {
+    this.books$ = this.bookService.getBooks();
+    this.books$.subscribe(result => {
+      this.books = result;
+    });
+
   }
   
   liked($event){

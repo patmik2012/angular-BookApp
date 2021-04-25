@@ -9,7 +9,7 @@ export class InMemoryBookService implements InMemoryDbService{
   constructor() { }
   createDb() {
     const db = {
-      events: BookTable.books
+      books: BookTable.books
     }
     return db;
   }
