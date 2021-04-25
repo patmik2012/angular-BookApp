@@ -16,6 +16,8 @@ import { environment } from '../environments/environment';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookSocialComponent } from './book-social/book-social.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
+import { InMemoryBookService } from './in-memory-book.service';
+import { BookService } from './book.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, HttpClientModule,
@@ -49,6 +51,6 @@ import { BookDetailsComponent } from './book-details/book-details.component';
     MatDividerModule*/ ],
   declarations: [ AppComponent, HelloComponent, BookListComponent, BookSocialComponent, BookDetailsComponent, ],
   bootstrap:    [ AppComponent ],
-  providers: []
+  providers: [InMemoryBookService, BookService]
 })
 export class AppModule { }
