@@ -67,7 +67,7 @@ books=
 
   ngOnInit() {
     this.books$ = this.bookService.getBooks();
-    this.books$.subscribe(result => {
+    this.books$.subscribe(result => { 
       this.books = result;
     });
 
