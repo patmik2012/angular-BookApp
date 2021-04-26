@@ -12,20 +12,8 @@ import { BookTable } from './books';
   styleUrls: ['./book-list.component.css']
 })
 
-
-export class BookListComponent implements AfterViewInit {
-  displayedColumns: string[] = ['title', 'authorId', 'published'];
-  dataSource = new MatTableDataSource();
-
-  @ViewChild(MatSort) sort: MatSort;
-
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-  }
-
-/*
 export class BookListComponent implements OnInit {
-  /*
+/*  
 books=
 [
     {
@@ -59,16 +47,19 @@ books=
   */
   
 
-  
+
   constructor(private bookService: BookService) { }
 
   books$: Observable<any>;
   books;
-
+  datasource=new MatTableDataSource() ;
+  
   ngOnInit() {
     this.books$ = this.bookService.getBooks();
+    this.datasource=this.books;  
+    //this.datasource=BookTable.books;
     this.books$.subscribe(result => { 
-      this.books = result;
+    this.books = result;
     });
 
   }
