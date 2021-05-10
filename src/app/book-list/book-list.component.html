@@ -82,7 +82,7 @@ th, td {
 
     <tr *ngFor="let book of books$ | async">
       <td>{{book.title}}</td>
-      <td>{{book.authorId}}</td>
+      <td>{{book.author}}</td>
       <td>{{book.published}}</td>
     </tr>
 
@@ -93,7 +93,7 @@ th, td {
   <table id="t01" matSort (matSortChange)="sortData($event)">
     <tr>
       <th mat-sort-header="title">Title</th>
-      <th mat-sort-header="authorId">authorID</th>
+      <th mat-sort-header="author">author</th>
       <th mat-sort-header="published">Published</th>
       <th>Edit</th>
       <th>Delete</th>
@@ -101,7 +101,7 @@ th, td {
 
     <tr *ngFor="let book of books$ | async">
       <td>{{book.title}}</td>
-      <td>{{book.authorId}}</td>
+      <td>{{book.author}}</td>
       <td>{{book.published}}</td>
       <td><button title="Edit book" mat-raised-button color="primary"><i class="material-icons">mode</i></button></td>
       <td><button title="Delete book" mat-raised-button color="warn"><i class="material-icons">remove_circle</i></button></td>
