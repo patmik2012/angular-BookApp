@@ -19,6 +19,9 @@ import { BookDetailsComponent } from './book-details/book-details.component';
 import { InMemoryBookService } from './in-memory-book.service';
 import { BookService } from './book.service';
 import { BookCreateComponent } from './book-create/book-create.component';
+import { AuthorService } from './author.service';
+import { AuthorListComponent } from './author-list/author-list.component';
+import { RequestService } from './request.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, HttpClientModule,environment.isMockEnabled ? HttpClientInMemoryWebApiModule.forRoot(InMemoryBookService) : [],
@@ -27,6 +30,8 @@ import { BookCreateComponent } from './book-create/book-create.component';
       { path: 'books', component: BookListComponent },
       { path: 'books/:bookId', component:BookDetailsComponent },
       { path: 'create', component: BookCreateComponent },
+      { path: 'authors', component: AuthorListComponent },
+
     ]),
     MatButtonModule,
     MatCardModule,
@@ -51,8 +56,8 @@ import { BookCreateComponent } from './book-create/book-create.component';
 		MatTooltipModule,
 		MatDialogModule,
     MatDividerModule*/ ],
-  declarations: [ AppComponent, HelloComponent, BookListComponent, BookSocialComponent, BookDetailsComponent, BookCreateComponent, ],
+  declarations: [ AppComponent, HelloComponent, BookListComponent, BookSocialComponent, BookDetailsComponent, BookCreateComponent, AuthorListComponent, ],
   bootstrap:    [ AppComponent ],
-  providers: [InMemoryBookService, BookService]
+  providers: [InMemoryBookService, BookService, AuthorService, RequestService]
 })
 export class AppModule { }
