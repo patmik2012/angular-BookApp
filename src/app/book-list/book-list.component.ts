@@ -3,7 +3,7 @@ import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/cor
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { BookService } from '../book.service';
 import { BookTable } from './books';
 
@@ -38,6 +38,10 @@ export class BookListComponent implements OnInit {
     }
 
   
+  onDeleteBook(bookId) {
+    this.bookService.deleteBook(bookId)
+      .pipe(switchMap(res => (this.books$ = this.bookService.getBooks()))).subscribe();
+  }
   
   onSort() {
     this.books$ = this.books$.pipe(
