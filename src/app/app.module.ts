@@ -23,7 +23,7 @@ import { AuthorListComponent } from './author-list/author-list.component';
 import { RequestService } from './request.service';
 import { MatSortModule } from '@angular/material/sort';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { FilterPipe } from './filter.pipe';
+import { BookFilterPipe } from './pipes/book-filter.pipe';
 
 @NgModule({
   imports: [
@@ -74,7 +74,7 @@ import { FilterPipe } from './filter.pipe';
     BookDetailsComponent,
     BookCreateComponent,
     AuthorListComponent,
-    FilterPipe
+    BookFilterPipe
   ],
   bootstrap: [AppComponent],
   providers: [InMemoryBookService, BookService, AuthorService, RequestService]
