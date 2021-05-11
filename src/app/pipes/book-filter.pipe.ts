@@ -12,6 +12,7 @@ export class BookFilterPipe implements PipeTransform {
       return items.filter(
         item =>
           item.id.toString().indexOf(filter.id) !== -1 &&
+          item.ISBN.toString().indexOf(filter.isbn) !== -1 &&
           item.title.indexOf(filter.title) !== -1 &&
           item.author.indexOf(filter.author) !== -1 &&
           item.published.toString().indexOf(filter.published) !== -1 && 
