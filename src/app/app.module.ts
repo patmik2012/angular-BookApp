@@ -14,7 +14,6 @@ import { HelloComponent } from './hello.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { environment } from '../environments/environment';
 import { BookListComponent } from './book-list/book-list.component';
-import { BookSocialComponent } from './book-social/book-social.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { InMemoryBookService } from './in-memory-book.service';
 import { BookService } from './book.service';
@@ -22,6 +21,7 @@ import { BookCreateComponent } from './book-create/book-create.component';
 import { AuthorService } from './author.service';
 import { AuthorListComponent } from './author-list/author-list.component';
 import { RequestService } from './request.service';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, HttpClientModule,environment.isMockEnabled ? HttpClientInMemoryWebApiModule.forRoot(InMemoryBookService) : [],
@@ -36,7 +36,8 @@ import { RequestService } from './request.service';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    MatInputModule/*,
+    MatInputModule,
+		MatSortModule,/*
 		MatMenuModule,
 		MatSelectModule,
 		MatTableModule,
@@ -47,7 +48,6 @@ import { RequestService } from './request.service';
 		MatDatepickerModule,
 		MatCardModule,
 		MatPaginatorModule,
-		MatSortModule,
 		MatCheckboxModule,
 		MatProgressSpinnerModule,
 		MatSnackBarModule,
@@ -56,7 +56,7 @@ import { RequestService } from './request.service';
 		MatTooltipModule,
 		MatDialogModule,
     MatDividerModule*/ ],
-  declarations: [ AppComponent, HelloComponent, BookListComponent, BookSocialComponent, BookDetailsComponent, BookCreateComponent, AuthorListComponent, ],
+  declarations: [ AppComponent, HelloComponent, BookListComponent,  BookDetailsComponent, BookCreateComponent, AuthorListComponent, ],
   bootstrap:    [ AppComponent ],
   providers: [InMemoryBookService, BookService, AuthorService, RequestService]
 })

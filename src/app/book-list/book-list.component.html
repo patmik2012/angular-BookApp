@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!--    HTML table-el
+
 <style>
 table {
   width:100%;
@@ -24,6 +26,8 @@ th, td {
   color: white;
 }
 </style>
+-->
+
 </head>
 <body>
 
@@ -36,7 +40,6 @@ th, td {
   </a>
 </div>
 
-<!--    MatCARD-al
 <div style="margin-bottom: 10px" *ngFor="let book of books$ | async">
   <mat-card>
     
@@ -54,22 +57,29 @@ th, td {
         <mat-card-subtitle>{{'Published in '+book.published}}</mat-card-subtitle>
       </mat-card-title>
     </mat-card-header>
-
-      <mat-card-content>
-
-        <p *ngIf="book.likes">
-        {{book.likes+' likes'}}
-        </p>
-
-      </mat-card-content>
     
-    <mat-card-actions>
-      <app-book-social [bk]=book (onlike)="liked($event)"></app-book-social>
-    </mat-card-actions>
+      <mat-card-actions align="end">
+        <button
+          title="Edit book"
+          [routerLink]="['/editbook', book.id]"
+          mat-raised-button
+          color="accent"
+        >
+          <i class="material-icons">mode_edit</i>
+        </button>
+        <button
+          title="Delete book"
+          (click)="onDeleteBook(book.id)"
+          mat-raised-button
+          color="warn"
+        >
+          <i class="material-icons">remove_circle</i>
+        </button>
+      </mat-card-actions>
 
   </mat-card >
 </div>
--->
+
 
 <!--    HTML table-el
 
@@ -87,13 +97,14 @@ th, td {
     </tr>
 
   </table>
--->
 
 
-  <table id="t01" matSort (matSortChange)="sortData($event)">
+
+  <table  id="t01"  matSort (matSortChange)="sortData($event)">
+    
     <tr>
       <th mat-sort-header="title">Title</th>
-      <th mat-sort-header="author">author</th>
+      <th mat-sort-header="author">Author</th>
       <th mat-sort-header="published">Published</th>
       <th>Edit</th>
       <th>Delete</th>
@@ -108,5 +119,5 @@ th, td {
     </tr>
   </table>
 
-
+-->
 </body>

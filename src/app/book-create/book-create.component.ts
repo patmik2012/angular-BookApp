@@ -35,9 +35,9 @@ export class BookCreateComponent implements OnInit {
 
     this.bookForm = this.formBuilder.group({
       title: '',
-      Author: '',
-      Published: '',
-      Pages: '',
+      author: '',
+      published: '',
+      pages: '',
       ISBN: ''
     });
   }
