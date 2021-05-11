@@ -1,0 +1,50 @@
+<div>
+  <h3>Update book</h3>
+
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit(bookForm.value)">
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>ISBN number</mat-label>
+        <input matInput placeholder="ISBN" formControlName="isbn">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Book title</mat-label>
+        <input matInput placeholder="Title" formControlName="title">
+      </mat-form-field>
+    </div>
+    <div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Book's author</mat-label>
+        <select matNativeControl [(ngModel)]="selectedAuthor" name="authors" [ngModelOptions]="{standalone: true}">
+        <option value="" selected></option>
+        <option *ngFor="let author of authors$ | async" [value]="author.name">
+          {{author.name}}
+        </option>
+      </select>
+      </mat-form-field>
+
+
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Books's publication year</mat-label>
+        <input matInput placeholder="Publication year" formControlName="published">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Books's page number</mat-label>
+        <input matInput placeholder="Pages" formControlName="pages">
+      </mat-form-field>
+    </div>
+    <span>
+    <button mat-raised-button color="primary" type>Save</button>
+    <a style="margin-left: 1rem" mat-raised-button routerLink="/books" color="warn">
+      <b>Cancel</b>
+    </a>
+    </span>
+  </form>
+</div>

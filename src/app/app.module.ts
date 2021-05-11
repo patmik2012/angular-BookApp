@@ -24,6 +24,7 @@ import { RequestService } from './request.service';
 import { MatSortModule } from '@angular/material/sort';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { BookFilterPipe } from './pipes/book-filter.pipe';
+import { BookEditComponent } from './book-edit/book-edit.component';
 
 @NgModule({
   imports: [
@@ -39,7 +40,8 @@ import { BookFilterPipe } from './pipes/book-filter.pipe';
       { path: '', component: BookListComponent },
       { path: 'books', component: BookListComponent },
       { path: 'books/:bookId', component: BookDetailsComponent },
-      { path: 'create', component: BookCreateComponent },
+      { path: 'createbook', component: BookCreateComponent },
+      { path: 'editbook/:bookId', component: BookEditComponent },
       { path: 'authors', component: AuthorListComponent }
     ]),
     MatButtonModule,
@@ -74,7 +76,8 @@ import { BookFilterPipe } from './pipes/book-filter.pipe';
     BookDetailsComponent,
     BookCreateComponent,
     AuthorListComponent,
-    BookFilterPipe
+    BookFilterPipe,
+    BookEditComponent
   ],
   bootstrap: [AppComponent],
   providers: [InMemoryBookService, BookService, AuthorService, RequestService]
