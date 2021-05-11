@@ -40,6 +40,29 @@ th, td {
   </a>
 </div>
 
+  <div style="margin-bottom: 10px;">
+  <mat-card style="background-color: #80ced6;">
+    <h5>Filter</h5>
+    <input matInput placeholder="id" [(ngModel)]="filterargs.id">
+    <input matInput placeholder="ISBN" [(ngModel)]="filterargs.isbn">
+    <input matInput placeholder="Title" [(ngModel)]="filterargs.title">
+    <input matInput placeholder="Author" [(ngModel)]="filterargs.author">
+    <input matInput placeholder="Published" [(ngModel)]="filterargs.published">
+    <input matInput placeholder="Pages" [(ngModel)]="filterargs.pages">
+  </mat-card>
+  </div>
+
+  <h5>Sorting in ascending order</h5>
+  <mat-button-toggle-group name="sortBy" [(ngModel)]="selectedSorting" (change)="onSort()">
+    <mat-button-toggle value="id">id</mat-button-toggle>
+    <mat-button-toggle value="isbn">ISBN</mat-button-toggle>
+    <mat-button-toggle value="title">Title</mat-button-toggle>
+    <mat-button-toggle value="author">Author</mat-button-toggle>
+    <mat-button-toggle value="published">Published</mat-button-toggle>
+    <mat-button-toggle value="pages">Pages</mat-button-toggle>
+  </mat-button-toggle-group>
+
+<p>
 <div style="margin-bottom: 10px" *ngFor="let book of books$ | async">
   <mat-card>
     
@@ -63,23 +86,20 @@ th, td {
           title="Edit book"
           [routerLink]="['/editbook', book.id]"
           mat-raised-button
-          color="accent"
-        >
+          color="primary">
           <i class="material-icons">mode_edit</i>
         </button>
         <button
           title="Delete book"
           (click)="onDeleteBook(book.id)"
           mat-raised-button
-          color="warn"
-        >
+          color="warn">
           <i class="material-icons">remove_circle</i>
         </button>
       </mat-card-actions>
 
   </mat-card >
 </div>
-
 
 <!--    HTML table-el
 
