@@ -1,34 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <!--    HTML table-el
-
-<style>
-table {
-  width:100%;
-}
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 15px;
-  text-align: left;
-}
-#t01 tr:nth-child(even) {
-  background-color: #eee;
-}
-#t01 tr:nth-child(odd) {
- background-color: #fff;
-}
-#t01 th {
-  background-color: black;
-  color: white;
-}
-</style>
--->
-
-</head>
 <body>
 
 <h2>Books</h2>
@@ -45,10 +16,10 @@ th, td {
     <h5>Filter</h5>
     <input matInput placeholder="id" [(ngModel)]="filterargs.id">
     <input matInput placeholder="ISBN" [(ngModel)]="filterargs.isbn">
-    <input matInput placeholder="Title" [(ngModel)]="filterargs.title">
-    <input matInput placeholder="Author" [(ngModel)]="filterargs.author">
-    <input matInput placeholder="Published" [(ngModel)]="filterargs.published">
-    <input matInput placeholder="Pages" [(ngModel)]="filterargs.pages">
+    <input matInput placeholder="title" [(ngModel)]="filterargs.title">
+    <input matInput placeholder="author" [(ngModel)]="filterargs.author">
+    <input matInput placeholder="published" [(ngModel)]="filterargs.published">
+    <input matInput placeholder="pages" [(ngModel)]="filterargs.pages">
   </mat-card>
   </div>
 
@@ -63,7 +34,7 @@ th, td {
   </mat-button-toggle-group>
 
 <p>
-<div style="margin-bottom: 10px" *ngFor="let book of books$ | async">
+<div style="margin-bottom: 10px" *ngFor="let book of books$ | async | filter:filterarg">
   <mat-card>
     
     <mat-card-header>
@@ -101,43 +72,4 @@ th, td {
   </mat-card >
 </div>
 
-<!--    HTML table-el
-
-  <table id="t01">
-    <tr>
-      <th>Title</th>
-      <th>Author</th> 
-      <th>Published</th>
-    </tr>
-
-    <tr *ngFor="let book of books$ | async">
-      <td>{{book.title}}</td>
-      <td>{{book.author}}</td>
-      <td>{{book.published}}</td>
-    </tr>
-
-  </table>
-
-
-
-  <table  id="t01"  matSort (matSortChange)="sortData($event)">
-    
-    <tr>
-      <th mat-sort-header="title">Title</th>
-      <th mat-sort-header="author">Author</th>
-      <th mat-sort-header="published">Published</th>
-      <th>Edit</th>
-      <th>Delete</th>
-    </tr>
-
-    <tr *ngFor="let book of books$ | async">
-      <td>{{book.title}}</td>
-      <td>{{book.author}}</td>
-      <td>{{book.published}}</td>
-      <td><button title="Edit book" mat-raised-button color="primary"><i class="material-icons">mode</i></button></td>
-      <td><button title="Delete book" mat-raised-button color="warn"><i class="material-icons">remove_circle</i></button></td>
-    </tr>
-  </table>
-
--->
 </body>
