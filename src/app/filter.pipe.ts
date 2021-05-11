@@ -11,12 +11,7 @@ export class FilterPipe implements PipeTransform {
     }
       return items.filter(
         item =>
-          item.id.toString().indexOf(filter.id) !== -1 &&
-          item.isbn.toString().indexOf(filter.isbn) !== -1 &&
-          item.title.indexOf(filter.title) !== -1 &&
-          item.author.indexOf(filter.author) !== -1 &&
-          item.published.toString().indexOf(filter.published) !== -1 &&
-          item.pages.toString().indexOf(filter.pages) !== -1
+          item.id.toString().indexOf(filter.id) !== -1 
       );
     }
   

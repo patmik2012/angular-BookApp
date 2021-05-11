@@ -33,7 +33,7 @@ export class BookListComponent implements OnInit {
   books;
   
   ngOnInit() {
-    this.books$ = this.bookService
+   this.books$ = this.bookService
       .getBooks().pipe();
     }
 
