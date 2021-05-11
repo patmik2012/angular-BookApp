@@ -37,12 +37,12 @@ import { BookEditComponent } from './book-edit/book-edit.component';
       ? HttpClientInMemoryWebApiModule.forRoot(InMemoryBookService)
       : [],
     RouterModule.forRoot([
-      { path: '', component: BookListComponent },
-      { path: 'books', component: BookListComponent },
-      { path: 'books/:bookId', component: BookDetailsComponent },
-      { path: 'createbook', component: BookCreateComponent },
-      { path: 'editbook/:bookId', component: BookEditComponent },
-      { path: 'authors', component: AuthorListComponent }
+      { path: "", component: HelloComponent },
+      { path: "books", component: BookListComponent },
+      { path: "books/:bookId", component: BookDetailsComponent },
+      { path: "createbook", component: BookCreateComponent },
+      { path: "editbook/:bookId", component: BookEditComponent },
+      { path: "authors", component: AuthorListComponent }
     ]),
     MatButtonModule,
     MatCardModule,

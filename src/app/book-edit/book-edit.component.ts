@@ -29,8 +29,8 @@ export class BookEditComponent implements OnInit {
 
   ngOnInit() {
     this.bookForm = this.formBuilder.group({
-      id: "",
-      isbn: "",
+      bookId: "",
+      ISBN: "",
       title: "",
       author: "",
       published: "",
@@ -44,7 +44,7 @@ export class BookEditComponent implements OnInit {
         this.selectedAuthor = result.author;
         this.bookForm = this.formBuilder.group({
           id: this.book.id,
-          isbn: this.book.ISBN,
+          ISBN: this.book.ISBN,
           title: this.book.title,
           author: this.book.author,
           published: this.book.published,
@@ -58,7 +58,7 @@ export class BookEditComponent implements OnInit {
     bookData.author = this.selectedAuthor;
     this.bookService.updateBook(bookData).subscribe(res => {
       this.bookForm.reset();
-      this.router.navigate(["/books"]);
+      this.router.navigate(['/books']);
     });
   }
 

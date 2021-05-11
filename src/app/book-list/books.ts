@@ -3,7 +3,7 @@ export class BookTable {
     {
       id: 1,
       title: 'Első könyv',
-      author: 'Szerző1',
+      author: 'Első szerző',
       published: 2011,
       pages: 345,
       ISBN: 2352145234
@@ -11,7 +11,7 @@ export class BookTable {
     {
       id: 2,
       title: 'Második könyv',
-      author: 'Szerző1',
+      author: 'Első szerző',
       published: 2010,
       pages: 532,
       ISBN: 12355326312
@@ -19,7 +19,7 @@ export class BookTable {
     {
       id: 3,
       title: 'Harmadik könyv',
-      author: 'Szerző 2',
+      author: 'Második szerző',
       published: 2003, 
       pages: 147,
       ISBN: 635234265623
