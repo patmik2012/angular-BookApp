@@ -27,6 +27,10 @@ import { BookFilterPipe } from './pipes/book-filter.pipe';
 import { BookEditComponent } from './book-edit/book-edit.component';
 import { BookstoreService } from './bookstore.service';
 import { BookstoreListComponent } from './bookstore-list/bookstore-list.component';
+import { AuthorCreateComponent } from './author-create/author-create.component';
+import { AuthorEditComponent } from './author-edit/author-edit.component';
+import { BookstoreEditComponent } from './bookstore-edit/bookstore-edit.component';
+import { BookstoreCreateComponent } from './bookstore-create/bookstore-create.component';
 
 @NgModule({
   imports: [
@@ -39,13 +43,17 @@ import { BookstoreListComponent } from './bookstore-list/bookstore-list.componen
       ? HttpClientInMemoryWebApiModule.forRoot(InMemoryBookService)
       : [],
     RouterModule.forRoot([
-      { path: "", component: HelloComponent },
+      { path: "", component: BookListComponent },
       { path: "books", component: BookListComponent },
       { path: "books/:bookId", component: BookDetailsComponent },
       { path: "createbook", component: BookCreateComponent },
       { path: "editbook/:bookId", component: BookEditComponent },
       { path: "authors", component: AuthorListComponent },
+      { path: "createauthor", component: AuthorCreateComponent },
+      { path: "editauthor/:authorId", component: AuthorEditComponent },
       { path: "bookstores", component: BookstoreListComponent },
+      { path: "createbookstore", component: BookstoreCreateComponent },
+      { path: "editbookstore/:bookstoreId", component: BookstoreEditComponent },
     ]),
     MatButtonModule,
     MatCardModule,
@@ -81,7 +89,11 @@ import { BookstoreListComponent } from './bookstore-list/bookstore-list.componen
     AuthorListComponent,
     BookFilterPipe,
     BookEditComponent,
-    BookstoreListComponent
+    BookstoreListComponent,
+    AuthorCreateComponent,
+    AuthorEditComponent,
+    BookstoreEditComponent,
+    BookstoreCreateComponent
   ],
   bootstrap: [AppComponent],
   providers: [InMemoryBookService, BookService, AuthorService, RequestService, BookstoreService]
