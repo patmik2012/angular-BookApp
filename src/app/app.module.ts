@@ -25,6 +25,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { BookFilterPipe } from './pipes/book-filter.pipe';
 import { BookEditComponent } from './book-edit/book-edit.component';
+import { BookstoreService } from './bookstore.service';
+import { BookstoreListComponent } from './bookstore-list/bookstore-list.component';
 
 @NgModule({
   imports: [
@@ -42,7 +44,8 @@ import { BookEditComponent } from './book-edit/book-edit.component';
       { path: "books/:bookId", component: BookDetailsComponent },
       { path: "createbook", component: BookCreateComponent },
       { path: "editbook/:bookId", component: BookEditComponent },
-      { path: "authors", component: AuthorListComponent }
+      { path: "authors", component: AuthorListComponent },
+      { path: "bookstores", component: BookstoreListComponent },
     ]),
     MatButtonModule,
     MatCardModule,
@@ -77,9 +80,10 @@ import { BookEditComponent } from './book-edit/book-edit.component';
     BookCreateComponent,
     AuthorListComponent,
     BookFilterPipe,
-    BookEditComponent
+    BookEditComponent,
+    BookstoreListComponent
   ],
   bootstrap: [AppComponent],
-  providers: [InMemoryBookService, BookService, AuthorService, RequestService]
+  providers: [InMemoryBookService, BookService, AuthorService, RequestService, BookstoreService]
 })
 export class AppModule {}
