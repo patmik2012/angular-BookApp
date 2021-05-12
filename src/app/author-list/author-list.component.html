@@ -11,6 +11,40 @@
   </a>
 </div>
 
+  <div style="margin-bottom: 10px;">
+  <mat-card style="background-color: #80ced6;">
+    <h5>Filter</h5>
+    <input matInput placeholder="id" [(ngModel)]="filterargs.id">
+    <input matInput placeholder="name" [(ngModel)]="filterargs.name">
+    <input matInput placeholder="birth" [(ngModel)]="filterargs.birth">
+    <input matInput placeholder="nationality" [(ngModel)]="filterargs.nationality">
+  </mat-card>
+  </div>
 
+  <h5>Sorting by ascending order</h5>
+  <mat-button-toggle-group name="sortBy" [(ngModel)]="selectedSorting" (change)="onSort()">
+    <mat-button-toggle value="id">id</mat-button-toggle>
+    <mat-button-toggle value="name">Name</mat-button-toggle>
+    <mat-button-toggle value="birth">Birth</mat-button-toggle>
+    <mat-button-toggle value="nationality">Nationality</mat-button-toggle>
+  </mat-button-toggle-group>
+
+<p>
+
+  <div style="margin-bottom: 10px" *ngFor="let author of authors$ | async | authorfilter:filterargs">
+  <mat-card>
+    
+    <mat-card-header>
+      <div mat-card-avatar>
+        <i class="material-icons">menu_book</i>
+      </div>
+        <mat-card-title>
+            <b>{{author.name}}</b>
+        </mat-card-title>
+        <mat-card-subtitle>{{'Birth: '+author.birth}}</mat-card-subtitle>
+        <mat-card-subtitle>{{'Nationality: '+author.nationality}}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+  </div>
 
 </body>

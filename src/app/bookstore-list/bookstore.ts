@@ -1,7 +1,7 @@
 export class BookstoreTable {
   public static bookstores = [
     {
-      BookStoreId: 1,
+      id: 1,
       name: 'Első könyvesbolt',
       city: 'Veszprém',
       zip: '8200',
@@ -9,7 +9,7 @@ export class BookstoreTable {
       open: '8:00-17:00'
     },
     {
-      BookStoreId: 2,
+      id: 2,
       name: 'Második könyvesbolt',
       city: 'Székesfehérvár',
       zip: '8000',

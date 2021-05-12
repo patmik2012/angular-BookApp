@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Bookstores</h2>
+
+
+<div style="margin-bottom: 10px">
+  <a mat-mini-fab routerLink="/create" color="primary">
+    <mat-icon>add</mat-icon>
+  </a>
+</div>
+
+  <div style="margin-bottom: 10px;">
+  <mat-card style="background-color: #80ced6;">
+    <h5>Filter</h5>
+    <input matInput placeholder="id" [(ngModel)]="filterargs.id">
+    <input matInput placeholder="name" [(ngModel)]="filterargs.name">
+    <input matInput placeholder="city" [(ngModel)]="filterargs.city">
+    <input matInput placeholder="zip" [(ngModel)]="filterargs.zip">
+    <input matInput placeholder="address" [(ngModel)]="filterargs.address">
+    <input matInput placeholder="open" [(ngModel)]="filterargs.open">
+  </mat-card>
+  </div>
+
+  <h5>Sorting by ascending order</h5>
+  <mat-button-toggle-group name="sortBy" [(ngModel)]="selectedSorting" (change)="onSort()">
+    <mat-button-toggle value="id">id</mat-button-toggle>
+    <mat-button-toggle value="name">Name</mat-button-toggle>
+    <mat-button-toggle value="city">City</mat-button-toggle>
+    <mat-button-toggle value="zip">Zip</mat-button-toggle>
+    <mat-button-toggle value="address">Address</mat-button-toggle>
+    <mat-button-toggle value="open">Open</mat-button-toggle>
+  </mat-button-toggle-group>
+
+<p>
+  <div style="margin-bottom: 10px" *ngFor="let bookstore of bookstores$ | async | bookstorefilter:filterargs">
+  <mat-card>
+    
+    <mat-card-header>
+      <div mat-card-avatar>
+        <i class="material-icons">menu_book</i>
+      </div>
+        <mat-card-title>
+            <b>{{bookstore.name}}</b>
+        </mat-card-title>
+        <mat-card-subtitle>{{bookstore.city}}</mat-card-subtitle>
+        <mat-card-subtitle>{{bookstore.address}}</mat-card-subtitle>
+        <mat-card-subtitle>{{bookstore.zip}}</mat-card-subtitle>
+        <mat-card-subtitle>{{'open: '+bookstore.open}}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+  </div
+  >
+</body>

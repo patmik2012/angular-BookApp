@@ -31,6 +31,8 @@ import { AuthorCreateComponent } from './author-create/author-create.component';
 import { AuthorEditComponent } from './author-edit/author-edit.component';
 import { BookstoreEditComponent } from './bookstore-edit/bookstore-edit.component';
 import { BookstoreCreateComponent } from './bookstore-create/bookstore-create.component';
+import { AuthorFilterPipe } from './pipes/author-filter.pipe';
+import { BookstoreFilterPipe } from './pipes/bookstore-filter.pipe';
 
 @NgModule({
   imports: [
@@ -93,7 +95,9 @@ import { BookstoreCreateComponent } from './bookstore-create/bookstore-create.co
     AuthorCreateComponent,
     AuthorEditComponent,
     BookstoreEditComponent,
-    BookstoreCreateComponent
+    BookstoreCreateComponent,
+    AuthorFilterPipe,
+    BookstoreFilterPipe
   ],
   bootstrap: [AppComponent],
   providers: [InMemoryBookService, BookService, AuthorService, RequestService, BookstoreService]
