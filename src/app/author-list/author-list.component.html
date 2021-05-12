@@ -44,6 +44,24 @@
         <mat-card-subtitle>{{'Birth: '+author.birth}}</mat-card-subtitle>
         <mat-card-subtitle>{{'Nationality: '+author.nationality}}</mat-card-subtitle>
     </mat-card-header>
+
+      <mat-card-actions align="end">
+        <button
+          title="Edit author"
+          [routerLink]="['/editauthor', author.id]"
+          mat-raised-button
+          color="primary">
+          <i class="material-icons">mode_edit</i>
+        </button>
+        <button
+          title="Delete author"
+          (click)="onDeleteAuthor(author.id,author.name)"
+          mat-raised-button
+          color="warn">
+          <i class="material-icons">delete</i>
+        </button>
+      </mat-card-actions>
+    
   </mat-card>
   </div>
 

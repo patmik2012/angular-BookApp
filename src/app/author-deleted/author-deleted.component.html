@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Deleted authors</h2>
+<p>
+  <a mat-button routerLink="/authors">
+    <b>Back</b>
+  </a>
+</p>
+
+  <div style="margin-bottom: 10px" *ngFor="let author of deleted$ | async">
+    <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar>
+        <i class="material-icons">&#xE87C;</i>
+      </div>
+        <mat-card-title>
+            <b>{{author.name}}</b>
+        </mat-card-title>
+        <mat-card-subtitle>{{'Birth: '+author.birth}}</mat-card-subtitle>
+        <mat-card-subtitle>{{'Nationality: '+author.nationality}}</mat-card-subtitle>
+    </mat-card-header>
+
+      <mat-card-actions align="end">
+        <button
+          title="Undo"
+          (click)="onUndo(author.name)"
+          mat-raised-button
+          color="accent">
+          <i class="material-icons">undo</i>
+        </button>
+      </mat-card-actions>
+
+    </mat-card>
+  </div>
+
+
+</body>
+</html>

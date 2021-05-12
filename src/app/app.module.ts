@@ -33,6 +33,8 @@ import { BookstoreEditComponent } from './bookstore-edit/bookstore-edit.componen
 import { BookstoreCreateComponent } from './bookstore-create/bookstore-create.component';
 import { AuthorFilterPipe } from './pipes/author-filter.pipe';
 import { BookstoreFilterPipe } from './pipes/bookstore-filter.pipe';
+import { DeletedService } from './deleted.service';
+import { AuthorDeletedComponent } from './author-deleted/author-deleted.component';
 
 @NgModule({
   imports: [
@@ -56,6 +58,7 @@ import { BookstoreFilterPipe } from './pipes/bookstore-filter.pipe';
       { path: "bookstores", component: BookstoreListComponent },
       { path: "createbookstore", component: BookstoreCreateComponent },
       { path: "editbookstore/:bookstoreId", component: BookstoreEditComponent },
+      { path: "authorsdeleted", component: AuthorDeletedComponent },
     ]),
     MatButtonModule,
     MatCardModule,
@@ -97,9 +100,10 @@ import { BookstoreFilterPipe } from './pipes/bookstore-filter.pipe';
     BookstoreEditComponent,
     BookstoreCreateComponent,
     AuthorFilterPipe,
-    BookstoreFilterPipe
+    BookstoreFilterPipe,
+    AuthorDeletedComponent
   ],
   bootstrap: [AppComponent],
-  providers: [InMemoryBookService, BookService, AuthorService, RequestService, BookstoreService]
+  providers: [InMemoryBookService, BookService, AuthorService, RequestService, BookstoreService, DeletedService]
 })
 export class AppModule {}
