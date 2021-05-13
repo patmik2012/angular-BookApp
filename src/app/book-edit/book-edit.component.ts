@@ -52,6 +52,7 @@ export class BookEditComponent implements OnInit {
         });
       });
     });
+    
   }
 
   onSubmit(bookData) {
