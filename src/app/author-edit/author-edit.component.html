@@ -1,0 +1,34 @@
+<div>
+  <h3>Update author</h3>
+
+  <form [formGroup]="authorForm" (ngSubmit)="onSubmit(authorForm.value)">
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="name" formControlName="name">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Year of birth</mat-label>
+        <input matInput placeholder="birth" formControlName="birth">
+      </mat-form-field>
+    </div>
+    
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Nationality</mat-label>
+        <input matInput placeholder="nationality" formControlName="nationality">
+      </mat-form-field>
+    </div>
+
+    <span>
+    <button mat-raised-button color="primary" type>Save</button>
+    <a style="margin-left: 4rem" mat-raised-button routerLink="/authors" color="warn">
+      <b>Cancel</b>
+    </a>
+    </span>
+
+  </form>
+</div>

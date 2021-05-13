@@ -1,0 +1,48 @@
+<div>
+  <h3>Update bookstore</h3>
+
+  <form [formGroup]="bookstoreForm" (ngSubmit)="onSubmit(bookstoreForm.value)">
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="name" formControlName="name">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>City</mat-label>
+        <input matInput placeholder="city" formControlName="city">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Zip code</mat-label>
+        <input matInput placeholder="zip" formControlName="zip">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="address" formControlName="address">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Opening hours</mat-label>
+        <input matInput placeholder="open" formControlName="open">
+      </mat-form-field>
+    </div>
+
+    <span>
+    <button mat-raised-button color="primary" type>Save</button>
+    <a style="margin-left: 4rem" mat-raised-button routerLink="/bookstor" color="warn">
+      <b>Cancel</b>
+    </a>
+    </span>
+
+  </form>
+</div>
