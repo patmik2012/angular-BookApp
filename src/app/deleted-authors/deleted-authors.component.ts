@@ -6,17 +6,13 @@ import { AuthorService } from '../author.service';
 import { DeletedService } from '../deleted.service';
 
 @Component({
-  selector: 'app-author-deleted',
-  templateUrl: './author-deleted.component.html',
-  styleUrls: ['./author-deleted.component.css']
+  selector: 'app-deleted-authors',
+  templateUrl: './deleted-authors.component.html',
+  styleUrls: ['./deleted-authors.component.css']
 })
-export class AuthorDeletedComponent implements OnInit {
+export class DeletedAuthorsComponent implements OnInit {
 
-  constructor(
-    private authorService: AuthorService, 
-    private deletedService: DeletedService, 
-    private router: Router
-  ) { }
+  constructor(private authorService: AuthorService, private deletedService: DeletedService, private router: Router) { }
 
   deleted$: Observable<any>
   restoredAuthor;
@@ -26,12 +22,12 @@ export class AuthorDeletedComponent implements OnInit {
   }
 
   onUndo(name){
-    this.deletedService.getDeleted().pipe(map(dels => dels.filter(deleted => deleted.name === name))).subscribe(result => {
+    this.deletedService.getDeleted().pipe(map(deleteds => deleteds.filter(deleted => deleted.name === name))).subscribe(result => {
       this.restoredAuthor = result
       console.log(result)
       this.authorService.createAuthor(this.restoredAuthor[0]).subscribe()
+
       this.router.navigate(["/authors"]);
     })
-  }  
-
+  }
 }

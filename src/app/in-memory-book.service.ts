@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { AuthorTable } from './author-list/authors';
 import { BookTable } from './book-list/books';
 import { BookstoreTable } from './bookstore-list/bookstore';
+import { DeletedTable } from './deleted-authors/deleted';
 
 @Injectable()
 export class InMemoryBookService implements InMemoryDbService {
@@ -12,7 +13,9 @@ export class InMemoryBookService implements InMemoryDbService {
     const db = {
       books: BookTable.books,
       authors: AuthorTable.authors,
-      bookstores: BookstoreTable.bookstores
+      bookstores: BookstoreTable.bookstores,
+      deleted: DeletedTable.deleted
+
     };
     return db;
   }

@@ -1,0 +1,37 @@
+<div style="margin:2rem">
+  <h2>Previously deleted authors</h2>
+
+  <div style="margin-bottom: 10px">
+    <a mat-button routerLink="/authors" color="primary">
+      <b>Back to authors</b>
+    </a>
+  </div>
+
+  <div style="margin-bottom: 10px" *ngFor="let author of deleted$ | async">
+    <mat-card style="background-color: #f0f9ff">
+
+      <mat-card-header>
+        <div mat-card-avatar>
+          <i class="material-icons">deleted</i>
+        </div>
+        <mat-card-title>
+          <b>{{author.name}}</b>
+        </mat-card-title>
+        <mat-card-subtitle>{{author.birth}}</mat-card-subtitle>
+        <mat-card-subtitle>{{author.nationality}}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-actions align="end">
+        <button
+          title="Undo"
+          (click)="onUndo(author.name)"
+          mat-raised-button
+          color="warn"
+        >
+          <i class="material-icons">undo</i>
+        </button>
+      </mat-card-actions>
+
+    </mat-card>
+  </div>
+</div>
