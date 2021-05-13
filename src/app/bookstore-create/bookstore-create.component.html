@@ -1,0 +1,52 @@
+<h3>Create new bookstore</h3>
+<p>
+  <a mat-button routerLink="/bookstores">
+    <b>Back</b>
+  </a>
+</p>
+
+
+<form [formGroup]="bookstoreForm" (ngSubmit)="onSubmit(bookstoreForm.value)">
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Bookstore's name</mat-label>
+      <input matInput placeholder="Name" formControlName="name">
+      <mat-hint>Give the name of the bookstore</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Bookstore's city</mat-label>
+      <input matInput placeholder="City" formControlName="city">
+      <mat-hint>Give the city of the bookstore</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Bookstore's zip code</mat-label>
+      <input matInput placeholder="Zip code" formControlName="zip">
+      <mat-hint>Give the zip code of the bookstore</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Bookstore's address</mat-label>
+      <input matInput placeholder="Address" formControlName="address">
+      <mat-hint>Give the address of the bookstore</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Bookstore's openning hours</mat-label>
+      <input matInput placeholder="Opening hours" formControlName="open">
+      <mat-hint>Give the opening hours of the bookstore</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <button mat-raised-button color="primary" type>Create</button>
+</form>
