@@ -25,7 +25,6 @@ export class DeletedAuthorsComponent implements OnInit {
     this.deletedService.getDeleted().pipe(map(deleteds => deleteds.filter(deleted => deleted.name === name))).subscribe(result => {
       this.restoredAuthor = result
       this.authorService.createAuthor(this.restoredAuthor[0]).subscribe()
-
       this.router.navigate(["/authors"]);
     })
   }

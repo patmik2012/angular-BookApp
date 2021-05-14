@@ -1,14 +1,14 @@
 <div style="margin:2rem">
-  <h2>Previously deleted authors</h2>
+  <h2>Earlier deleted authors</h2>
 
   <div style="margin-bottom: 10px">
     <a mat-button routerLink="/authors" color="primary">
-      <b>Back to authors</b>
+      <b>Back</b>
     </a>
   </div>
 
   <div style="margin-bottom: 10px" *ngFor="let author of deleted$ | async">
-    <mat-card style="background-color: #f0f9ff">
+    <mat-card>
 
       <mat-card-header>
         <div mat-card-avatar>
