@@ -4,7 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'hello',
   template: `
   <mat-card>
-    <h1>Welcome in {{name}}!</h1>
+    <h1>Welcome to {{name}}!</h1>
     <nav>
       <ul>
         <li><a mat-button routerLink="/books">

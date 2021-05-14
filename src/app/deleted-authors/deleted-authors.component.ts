@@ -22,7 +22,7 @@ export class DeletedAuthorsComponent implements OnInit {
   }
 
   onUndo(name){
-    this.deletedService.getDeleted().pipe(map(deleteds => deleteds.filter(deleted => deleted.name === name))).subscribe(result => {
+    this.deletedService.getDeleted().pipe(map(dels => dels.filter(deleted => deleted.name === name))).subscribe(result => {
       this.restoredAuthor = result
       this.authorService.createAuthor(this.restoredAuthor[0]).subscribe()
       this.router.navigate(["/authors"]);
